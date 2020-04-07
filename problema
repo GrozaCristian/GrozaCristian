@@ -1,0 +1,36 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#pragma warning(disable: 4996)
+int stiva[100], varf = 0;
+int Push(int Valoare)
+{
+	stiva[++varf] = Valoare;
+	return Valoare;
+}
+int main() {
+	int NR;
+	printf("NR=");
+	scanf("%d", &NR);
+	while (NR)
+	{
+		if (NR % 2 == 0)Push(0);
+		else Push(1);
+		NR = NR / 2;
+	}
+	printf("Forma binara:");
+	int i;
+	for (i = 8; i >= 1; i--)
+	{
+		printf("%d ", stiva[i]);
+	}
+	printf("\n");
+	printf("Forma binara stiva output:");
+	for (i = 8; i >= 1; i--)
+	{
+		printf("%d ", stiva[i]);
+	}
+	system("pause");
+	return 0;
+}
